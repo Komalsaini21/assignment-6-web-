@@ -1,0 +1,24 @@
+<ul class="navbar-nav ml-auto">
+    {{#if session.user}}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account: {{session.user.userName}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/lego/addSet">Add to Collection</a></li>
+                <li><a class="dropdown-item" href="/userHistory">User History</a></li>
+                <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+            </ul>
+        </li>
+    {{else}}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/login">Login</a></li>
+                <li><a class="dropdown-item" href="/register">Register</a></li>
+            </ul>
+        </li>
+    {{/if}}
+</ul>

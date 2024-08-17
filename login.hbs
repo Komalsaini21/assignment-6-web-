@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Login</h1>
+    
+    <!-- Form for User Login -->
+    <form action="/login" method="POST">
+        
+        <!-- User Name Input -->
+        <div class="mb-3">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="userName" name="userName" placeholder="User Name" required value="{{userName}}">
+        </div>
+        
+        <!-- Password Input -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Login</button>
+        
+        <!-- Error Message Display -->
+        {{#if errorMessage}}
+            <div class="alert alert-danger mt-3" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{{errorMessage}}</span>
+            </div>
+        {{/if}}
+    </form>
+</div>

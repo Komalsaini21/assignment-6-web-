@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>User History for {{session.user.userName}}</h1>
+    <p>Email: {{session.user.email}}</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Login Date/Time</th>
+                <th scope="col">Client Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each session.user.loginHistory}}
+                <tr>
+                    <td>{{this.dateTime}}</td>
+                    <td>{{this.userAgent}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
